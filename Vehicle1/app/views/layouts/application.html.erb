@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vehicle</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' %>
+    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'menu', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' %>
+    <style type="text/css">
+
+    
+    </style>
+  </head>
+
+  <body>
+
+  	<!-- header part-->
+	<div class="container-fluid head_logo"  style="">
+		<div class="row" >
+			<div class="col-md-2 col-sm-2 col-xs-12" style="text-align: center;">
+				<img src="assets/nitk1.png" alt="Los Angeles" class="logo_img" style="">
+			</div>
+
+			<div class="col-md-8  col-sm-8 col-xs-12 logo">
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12 logo">
+						NATIONAL INSTITUTE OF TECHNOLOGY KARNATAKA,SURATHKAL
+					</div>
+					<div class="col-md-12 col-sm-12	 col-xs-12 logo">
+						DEPARTMENT OF MATHEMATICAL AND COMPUTATIONAL SCIENCE
+					</div>
+					<div class="col-md-12 col-sm-12	 col-xs-12 logo">
+						
+					</div>
+					
+				</div>
+
+			</div>
+			<div class="col-md-2" >
+				<div  id="search" class="input-group search">
+					<input type="text" class="form-control" placeholder="Search">
+					<div class="input-group-btn">
+						<button class="btn btn-default" type="submit">
+								  <i class="glyphicon glyphicon-search"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+
+		</div>	
+
+		<div class="row">
+			<div class="col-md-12">
+			<header style="z-index: 1000">
+				<!-- <div class="logo">logo</div> -->
+				<nav>
+					<ul>
+						<li><%= link_to "Home", home_path %></li>
+						<li class="sub-menu"><a href="#">Registration</a>
+							<ul>
+								<li><%= link_to "Form A", test_path %></li>
+								<li><%= link_to "Form B",formb_path %></li>
+							</ul>
+						</li>
+						<li><a href="#">Info.</a></li>
+						<li><a href="newlogin.html">Login</a></li>
+						<li><a href="#">About</a></li>
+					</ul>
+				</nav>
+				<div class="menu-toggle"><i class="fa fa-bars"></i></div>
+			</header>
+			</div>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+		  <script type="text/javascript">
+		  	$(document).ready(function(){
+		  		$('.menu-toggle').click(function(){
+		  			$('nav').toggleClass('active')
+		  		})
+		  		$('ul li').click(function(){
+		  			$(this).siblings().removeClass('active');
+		  			$(this).toggleClass('active');
+		  		})
+		  	})
+		  </script>
+		</div>
+	
+		
+		<div class="row" style=" position: relative;">
+			<div class="col-md-12"  style="margin-top: 25px; "></div>
+		</div>
+	</div>
+
+<!--End of Header -->
+
+    <%= yield %>
+	  <div class="footer">
+	    <img src="assets/copyright.png" height="18px" width="18px"> 2018 NIT Karnataka. All rights reserved
+	 </div>
+  </body>
+</html>

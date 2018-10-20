@@ -1,0 +1,272 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+	margin:0;
+	padding: 0;
+	font-family: century gothic;
+}
+header{
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0 100px;
+	background: #262626;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.head_logo
+{
+	font-size:1.6em; 
+	font-style: Serif;  
+	width: 100%;
+	
+	margin-bottom: 20px; 
+	font-family: "Times New Roman" ,Times, serif; 
+	font-weight: bold;
+	text-align: center;
+	background: #F0F0F0;
+}
+.head_logo1
+{
+	font-size:1.6em; 
+	font-style: Serif;  
+	width: 100%;
+	
+	margin-bottom: 20px; 
+	font-family: "Times New Roman" ,Times, serif; 
+	font-weight: bold;
+	text-align: center;
+	background: #ffff;
+}
+header .logo{
+	color: #fff;
+	height: 50px;
+	line-height: 50px;
+	font-size: 24px;
+	/* float: left; */
+	font-weight: bold;
+	text-align: center;
+}
+
+header nav
+{
+	float: right;
+}
+header nav ul{
+	margin:0;
+	padding: 0px;
+	display: flex;
+	font-size: 16px;
+}
+header nav ul li
+{
+	list-style: none;
+	position: relative;
+}
+
+header nav ul li.sub-menu:before
+{
+	content: '\f0d7';
+	font-family: fontAwesome;
+	position: absolute;
+	line-height: 50px;
+	color: #fff;
+	right: 5px;
+}
+header nav ul li.active.sub-menu:before
+{
+	content: '\f0d8';
+}
+
+header nav ul li ul
+{
+	position: absolute;
+	left: 0;
+	background:#333;
+	display: none;
+}
+header nav ul li.active ul
+{
+	display: block;
+}
+
+header nav ul li ul li{
+	display: block;
+	width: 200px;
+}
+
+/*Sub sub menu*/
+
+header nav ul ul li:hover ul{
+	display: block;
+	margin-left: 205px;
+	top: 0;
+	position: absolute;
+	background: #333;
+}
+header nav ul li ul li ul{
+	position: relative;
+	display: none;
+	background:#333;
+}
+
+header nav ul li ul li:hover ul
+{
+	display: block;	
+}
+
+header nav ul li ul li ul li{
+	display: block;
+	width: 200px;
+}
+/*end of sub-sub-menu*/
+
+
+header nav ul li a{
+	height: 50px;
+	line-height: 50px;
+	padding: 0 20px;
+	color: #fff;
+	display: block;
+}
+header nav ul li a:hover,
+header nav ul li a.active{
+	color: #fff;
+	display: block;
+	background: #2196f3;
+}
+.menu-toggle{
+	color: #fff;
+	float: right;
+	line-height: 50px;
+	font-size: 24px;
+	cursor: pointer;
+	display: none;	
+}
+
+ .search
+{
+	top: 20px;
+	position: relative;
+	right: 0px;
+	background: transparent;
+	
+}
+
+
+.image-slider
+{
+	position: relative;
+	width: 100%;
+	height: 30%;
+}
+
+.dept-div
+{
+	vertical-align: middle;
+}
+
+.logo_img
+{
+	width:100px; 
+	height: 100px;
+}
+
+.content p
+{
+	font-size: 15px;
+	background: #ffff;
+}
+
+.links ul li{
+	border-left: 2px solid;
+}
+.links ul li a{
+	margin-left: 5px;
+}
+.footer a:hover
+{
+	
+	color: #000;
+}
+
+
+@media (max-width: 1000px)
+{
+	header{
+		padding: 0 20px;
+
+	}
+	.menu-toggle
+	{
+		display: block;
+	}
+	header nav{
+		
+		position: absolute;
+		width: 100%;
+		height: calc(100vh-50px);
+		background: #333;
+		top: 100%;
+		left: -100%;
+		transition: 1s;
+	}
+	header nav.active
+	{
+		left: 0;
+	}
+	header nav ul
+	{
+		display: block;
+		text-align: center;
+	}
+	header nav ul li a{
+		border-bottom: 1px solid rgba(0,0,0,2);
+	}
+
+	header nav ul li.active ul
+	{
+		position: relative;
+		background:#003e6f;
+
+	}
+		header nav ul li ul li
+	{
+		width: 100%;
+	}
+	 .search
+	{
+		
+		position: relative;
+		margin-bottom: 8%;
+		width: 95%;
+		
+
+	}
+	
+	.hide_image
+	{
+		display: none;
+	}
+	.logo
+	{
+		font-size:85%; 
+		font-style: Serif;  
+		text-align: center;
+		font-family: "Times New Roman" ,Times, serif; 
+		font-weight: bold;
+	}
+	.logo_img
+	{
+		width:60px; 
+		height: 60px;
+	}
+}
+    	.footer{
+    		width: 100%;
+    		text-align: center;
+    		background: #f0f0f0;
+    		font-size: 18px;
+    	}
