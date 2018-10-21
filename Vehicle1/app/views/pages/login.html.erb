@@ -1,374 +1,180 @@
-	<style type="text/css"> 
 
-@import 'https://fonts.googleapis.com/css?family=Fira+Sans';
-* {
-  box-sizing: border-box;
+  <script type="text/javascript">
+    function myfunction()
+    {
+      $(document).ready(function(){
+        $(".register").click(function(){
+            $("#log").hide();
+            $("#forget").hide();
+            $("#otp").hide();
+            $("#reg").show();
+            
+        });
+        $(".login").click(function(){
+                $("#log").show();
+                $("#forget").hide();
+                $("#otp").hide();
+                 $("#reg").hide();
+              });
+      });
+      $(".forget").click(function(){
+            $("#log").hide();
+            $("#reg").hide();
+            $("#otp").hide();
+            $("#forget").show();
+            
+        });
+      $(".otp").click(function(){
+            $("#log").hide();
+            $("#reg").hide();
+            $("#forget").hide();
+            $("#otp").show();
+        });
+    }
+
+  </script>
+  <style type="text/css">
+    :root {
+  --input-padding-x: .75rem;
+  --input-padding-y: .75rem;
 }
 
-a {
-  text-decoration: none;
+.container{
+  height: 100vh;
 }
 
-html, body {
-  height: 100%;
+.container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.form-signin {
   width: 100%;
+  max-width: 420px;
+  padding: 15px;
+  margin: auto;
 }
 
-body {
-  font-family: "Fira Sans", sans-serif;
-  background-image: url(http://static.boredpanda.com/blog/wp-content/uploads/2015/04/night-sky-stars-milky-way-photography-22__880.jpg);
-  background-size: cover;
-  background-position: left tom;
-  background-repeat: no-repeat;
-}
-body:after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.58);
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-.wrapper {
-  max-width: 300px;
-  background-color: transparent;
-  height: 100%;
-  margin: 0 auto;
+.form-label-group {
   position: relative;
-  z-index: 2;
-  overflow: hidden;
-  /**************************************************** */
-  /********************* LOGIN FORM ******************* */
-  /**************************************************** */
+  margin-bottom: 1rem;
 }
-.wrapper .login, .wrapper .register {
-  padding-top: 50px;
-  width: 100%;
-}
-.wrapper .login .profile, .wrapper .register .profile {
-  height: 100px;
-  width: 100px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 100%;
-  margin: 0 auto;
-  margin-bottom: 60px;
-  position: relative;
-}
-.wrapper .login .profile i, .wrapper .register .profile i {
-  color: rgba(255, 255, 255, 0.8);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-.wrapper .login .form-element, .wrapper .register .form-element {
-  width: 100%;
-  position: relative;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.8);
-}
-.wrapper .login .form-element span, .wrapper .register .form-element span {
-  display: inline-block;
-  width: 20%;
-  color: rgba(255, 255, 255, 0.8);
-}
-.wrapper .login .form-element input, .wrapper .register .form-element input {
-  font-family: "Fira Sans", sans-serif;
-  display: inline-block;
-  width: 80%;
-  margin: 20px 0 0 0;
-  padding: 10px 10px 10px 20px;
-  background: transparent;
-  outline: none;
-  border: none;
-  color: rgba(255, 255, 255, 0.8);
-}
-.wrapper .login .form-element input::-webkit-input-placeholder, .wrapper .register .form-element input::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1em;
-  font-weight: 500;
-}
-.wrapper .login .form-element input:-ms-input-placeholder, .wrapper .register .form-element input:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1em;
-  font-weight: 500;
-}
-.wrapper .login .form-element input::-ms-input-placeholder, .wrapper .register .form-element input::-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1em;
-  font-weight: 500;
-}
-.wrapper .login .form-element input::placeholder, .wrapper .register .form-element input::placeholder {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1em;
-  font-weight: 500;
-}
-.wrapper .login button, .wrapper .register button {
-  position: relative;
-  margin: 30px 0;
-  width: 100%;
-  padding: 10px;
-  outline: none;
-  border: none;
-  border-radius: 25px;
-  text-transform: uppercase;
-  background: #D32F2F;
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.login-view-toggle {
-  color: rgba(255, 255, 255, 0.8);
-  width: 100%;
-  text-align: center;
-  position: absolute;
-  top: calc(100vh - 30px);
-}
-.login-view-toggle a {
-  color: white;
-}
-.login-view-toggle .sign-up-toggle, .login-view-toggle .login-toggle {
+.reg{
   display: none;
 }
-.login-view-toggle .sign-up-toggle.is-active, .login-view-toggle .login-toggle.is-active {
-  display: block;
-  -webkit-animation: fade-in 600ms ease-in-out forwards;
-          animation: fade-in 600ms ease-in-out forwards;
+.login,.register{
+  font-size: 20px;
 }
-.login-view-toggle.move-top {
-  -webkit-animation: move-top 1000ms ease-in-out forwards;
-          animation: move-top 1000ms ease-in-out forwards;
-}
-.login-view-toggle.move-bottom {
-  -webkit-animation: move-bottom 1000ms ease-in-out forwards;
-          animation: move-bottom 1000ms ease-in-out forwards;
-}
-
-.login, .register {
-  opacity: 0;
-  pointer-events: none;
-}
-.login.is-active, .register.is-active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.login.up .form-element {
-  top: -200px;
-  opacity: 0;
-}
-.login.up .profile, .login.up button {
-  -webkit-transform: scale(0);
-          transform: scale(0);
-}
-.login.up button {
-  opacity: 0;
-}
-.login.push-down .form-element, .login.push-down button {
-  top: 0px;
-  opacity: 1;
-}
-.login.push-down .profile, .login.push-down button {
-  -webkit-transform: scale(1);
-          transform: scale(1);
-}
-.login.push-down button {
-  opacity: 1;
-}
-.login.push-down .form-element:nth-child(2) {
-  transition: all 600ms ease-in-out 2000ms;
-}
-.login.push-down .form-element:nth-child(3) {
-  transition: all 600ms ease-in-out 1400ms;
-}
-.login button {
-  transition: all 600ms ease-in-out 1000ms;
-}
-.login .profile {
-  transition: -webkit-transform 600ms ease-in-out 2500ms;
-  transition: transform 600ms ease-in-out 2500ms;
-  transition: transform 600ms ease-in-out 2500ms, -webkit-transform 600ms ease-in-out 2500ms;
-}
-
-.register {
-  position: absolute;
-  top: 50px;
-  left: 0;
-}
-.register.down .form-element {
-  top: 200px;
-  opacity: 0;
-}
-.register.down button {
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  opacity: 0;
-}
-.register.pull-up .form-element {
-  top: 0px;
-  opacity: 1;
-}
-.register.pull-up button {
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  opacity: 1;
-}
-.register.pull-up .form-element:nth-child(1) {
-  transition: all 600ms ease-in-out 1000ms;
-}
-.register.pull-up .form-element:nth-child(2) {
-  transition: all 600ms ease-in-out 1300ms;
-}
-.register.pull-up .form-element:nth-child(3) {
-  transition: all 600ms ease-in-out 1600ms;
-}
-.register.pull-up .form-element:nth-child(4) {
-  transition: all 600ms ease-in-out 1900ms;
-}
-.register button {
-  transition: all 600ms ease-in-out 2200ms;
-}
-
-@media screen and (max-width: 480px) {
-  .wrapper .login .profile {
-    height: 80px;
-    width: 80px;
-    margin-bottom: 40px;
-  }
-}
-@-webkit-keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes move-top {
-  0% {
-    top: calc(100vh - 30px);
-  }
-  100% {
-    top: 20px;
-  }
-}
-@keyframes move-top {
-  0% {
-    top: calc(100vh - 30px);
-  }
-  100% {
-    top: 20px;
-  }
-}
-@-webkit-keyframes move-bottom {
-  0% {
-    top: 20px;
-  }
-  100% {
-    top: calc(100vh - 30px);
-  }
-}
-@keyframes move-bottom {
-  0% {
-    top: 20px;
-  }
-  100% {
-    top: calc(100vh - 30px);
-  }
-}
-
   </style>
-  <script type="text/javascript">
-  $(function() {
-  function toggleView() {
-    $(".login").toggleClass("is-active");
-    $(".register").toggleClass("is-active");
-    $(".sign-up-toggle").toggleClass("is-active");
-    $(".login-toggle").toggleClass("is-active");
-  }
+  <div class="container">
 
-  function slideElements(prop) {
-    $(prop.showEle).removeClass(prop.removeShowClass);
-    $(prop.showEle).addClass(prop.addShowClass);
-    $(prop.hideEle).removeClass(prop.removeHideClass);
-    $(prop.hideEle).addClass(prop.addHideClass);
-  }
+    <!-- Custom styles for this template -->
+    <form class="form-signin log" id="log">
+      <div class="text-center mb-4">
+        <img class="mb-4" src="assets/vehicle.png" alt="" width="90" height="90">
+        <h1 class="h3 mb-3 font-weight-normal">Only for Employees</h1>
+       
+      </div>
 
-  $(".sign-up-toggle a").on("click", function() {
-    toggleView();
-    $(".login-view-toggle").addClass("move-top");
-    $(".login-view-toggle").removeClass("move-bottom");
-    slideElements({
-      showEle: ".register",
-      removeShowClass: "down",
-      addShowClass: "pull-up",
-      hideEle: ".login",
-      addHideClass: "up",
-      removeHideClass: "push-down"
-    });
-  });
+      <div class="form-label-group">
+        
+        <label for="inputEmail">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        
+      </div>
 
-  $(".login-toggle a").on("click", function() {
-    toggleView();
-    $(".login-view-toggle").addClass("move-bottom");
-    $(".login-view-toggle").removeClass("move-top");
-    slideElements({
-      showEle: ".login",
-      removeShowClass: "up",
-      addShowClass: "push-down",
-      hideEle: ".register",
-      addHideClass: "down",
-      removeHideClass: "pull-up"
-    });
-  });
-});
+      <div class="form-label-group">
+        <label for="inputPassword">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      </div>
 
-</script>
+      <div class="checkbox mb-3">
+        <!-- <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label> -->
+        <a class="forget" onclick="myfunction()" style="cursor: pointer;">Forget Password</a>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <a class="register" onclick="myfunction()">Register</a>
+      <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
+    </form>
+    <form class="form-signin reg" id="reg">
+      <div class="text-center mb-4">
+        <img class="mb-4" src="assets/vehicle.png" alt="" width="90" height="90">
+        <h1 class="h3 mb-3 font-weight-normal">Only for Employees</h1>
+       
+      </div>
 
-  <div class="wrapper">
-  <div class="login is-active">
-    <div class="profile"><i class="fa fa-camera fa-2x"></i></div>
-    <div class="form-element">
-      <span><i class="fa fa-envelope"></i></span><input type="email" placeholder="Your Email Address" />
+      <div class="form-label-group">
+        <label for="inputEmail">Full Name</label>
+        <input type="text" id="inputEmail" class="form-control" placeholder="Name" required autofocus>
+      </div>
+
+      <div class="form-label-group">
+        <label for="inputEmail">ID Card Number</label>
+        <input type="text" id="ID" class="form-control" placeholder="ID Card Number" required autofocus>
+      </div>
+
+      <div class="form-label-group">
+        <label for="inputEmail">Mobile Number</label>
+        <input type="text" id="phone" class="form-control" placeholder="Mobile Number" required autofocus>
+      </div>
+
+      <div class="form-label-group">
+        <label for="inputPassword">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      </div>
+
+      <div class="form-label-group">
+        <label for="inputPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
+      </div>
+      
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+      <a class="login" onclick="myfunction()">LogIn</a>
+      <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
+    </form>
+
+
+    <form class="form-signin reg" id="forget">
+      <div class="text-center mb-4">
+        <img class="mb-4" src="assets/vehicle.png" alt="" width="90" height="90">
+        <h1 class="h3 mb-3 font-weight-normal">Only for Employees</h1>
+      </div>
+
+      <div class="form-label-group ">
+        <label for="inputEmail">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block otp" type="submit" onclick="myfunction()">Submit</button>
+      <a class="register" onclick="myfunction()" style="margin-right: 20px; ">Register</a>
+      <a class="login" onclick="myfunction()">LogIn</a>
+      <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
+    </form>
+
+
+    <form class="form-signin reg" id="otp">
+      <div class="text-center mb-4">
+        <img class="mb-4" src="assets/vehicle.png" alt="" width="90" height="90">
+        <h1 class="h3 mb-3 font-weight-normal">Only for Employees</h1>
+      </div>
+
+
+      <div class="form-label-group ">
+        <label for="inputEmail">New Password</label>
+        <input type="text" id="" class="form-control" placeholder="New Password" required autofocus>
+      </div>
+      <div class="form-label-group ">
+        <label for="inputEmail">One Time Password (OTP)</label>
+        <input type="text" id="" class="form-control" placeholder="OTP" required autofocus>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" >Submit</button>
+      <a class="register" onclick="myfunction()" style="margin-right: 20px; ">Register</a>
+      <a class="login" onclick="myfunction()">LogIn</a>
+      <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
+    </form>
     </div>
-    <div class="form-element">
-      <span><i class="fa fa-lock"></i></span><input type="password" placeholder=" Password" />
-    </div>
-    <button class="btn-login">login</button>
-  </div>
-
-  <div class="register down">
-    <div class="form-element">
-      <span><i class="fa fa-user"></i></span><input type="text" placeholder="Full Name" />
-    </div>
-    <div class="form-element">
-      <span><i class="fa fa-envelope"></i></span><input type="email" placeholder="Your Email Address" />
-    </div>
-    <div class="form-element">
-      <span><i class="fa fa-lock"></i></span><input type="password" placeholder="Password" />
-    </div>
-    <div class="form-element">
-      <span><i class="fa fa-lock"></i></span><input type="password" placeholder="Re-Enter Password" />
-    </div>
-    <button class="btn-register">register</button>
-  </div>
-
-  <div class="login-view-toggle">
-    <div class="sign-up-toggle is-active">Don't have an account? <a href="#">Sign Up</a></div>
-    <div class="login-toggle">Already have an account? <a href="#">Login</a></div>
-  </div>
-
-</div>
